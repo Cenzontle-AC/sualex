@@ -62,8 +62,8 @@ if(!($wgServer && $wgDBserver && $wgDBname && $wgDBtype && $wgDBuser && $wgDBpas
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "Wiiki";
-$wgMetaNamespace = "Proyecto";
+$wgSitename = "Sualex";
+$wgMetaNamespace = "Project";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -136,7 +136,7 @@ $wgUseInstantCommons = false;
 $wgPingback = true;
 
 # Site language code, should be one of the list in ./includes/languages/data/Names.php
-$wgLanguageCode = "es";
+$wgLanguageCode = "en";
 
 # Time zone
 $wgLocaltimezone = "America/Mazatlan";
@@ -146,14 +146,14 @@ $wgLocaltimezone = "America/Mazatlan";
 ## be publicly accessible from the web.
 #$wgCacheDirectory = "$IP/cache";
 
-$wgSecretKey = "19032627fdcebae7192b1dac8f80b37498a90351fc6a6848136a0cbf36cc9443";
+$wgSecretKey = "9714a943c01ae4f0456cd3a5891626ae2a007373f58c20d1d6e72db90b3b1a0a";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "62f634a29e92b640";
+$wgUpgradeKey = "c5e1ec581779c46f";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
