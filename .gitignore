@@ -1,0 +1,8 @@
+/*
+**/.DS_Store
+!/.gitignore
+!/LocalSettings.php
+!/extensions/
+!/skins/
+!/.env.example
+!/README.md 
