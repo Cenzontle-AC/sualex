@@ -67,7 +67,7 @@ if(!($wgServer && $wgSecretKey && $wgUpgradeKey
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "Sualex";
+$wgSitename = "SUALEX";
 $wgMetaNamespace = "Project";
 
 ## The URL base path to the directory containing the wiki;
