@@ -83,8 +83,8 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-    '1x' => "$wgResourceBasePath/images/sualex-logo.jpg",
-    'icon' => "$wgResourceBasePath/images/sualex-logo.jpg",
+    '1x' => "$wgResourceBasePath/images/sualex-logo.png",
+    'icon' => "$wgResourceBasePath/images/sualex-logo.png",
 ];
 
 #Emailing
