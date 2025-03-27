@@ -158,9 +158,9 @@ $wgAuthenticationTokenVersion = "1";
 ## appropriate copyright notice / icon. GNU Free Documentation
 ## License and Creative Commons licenses are supported so far.
 $wgRightsPage = ""; # Set to the title of a wiki page that describes your license/copyright
-$wgRightsUrl = "https://creativecommons.org/licenses/by-sa/4.0/";
-$wgRightsText = "Creative Commons Atribución-CompartirIgual";
-$wgRightsIcon = "$wgResourceBasePath/resources/assets/licenses/cc-by-sa.png";
+$wgRightsUrl = "https://creativecommons.org/licenses/by-nc/4.0/";
+$wgRightsText = "Creative Commons Attribution-NonCommercial 4.0 International";
+$wgRightsIcon = "$wgResourceBasePath/images/cc-by-nc.svg";
 
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
