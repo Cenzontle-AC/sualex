@@ -200,3 +200,7 @@ $wgShowExceptionDetails = getenv('wgShowExceptionDetails') === 'true';
 $wgDebugToolbar = getenv('wgDebugToolbar') === 'true';
 $wgShowDebug = getenv('wgShowDebug') === 'true';
 $wgDevelopmentWarnings = getenv('wgDevelopmentWarnings') === 'true';
+$wgDebugLog = getenv('wgDebugLog') === 'true';
+if($wgDebugLog) {
+    $wgDebugLogFile = getenv('wgDebugLogFile');
+}
