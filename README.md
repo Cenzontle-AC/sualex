@@ -40,8 +40,10 @@ tar -xzvf mediawiki-*.tar.gz --strip-components=1
 rm mediawiki-*.tar.gz
 
 # crear archivo .env
-cp .env.example .env
+cp .sualexenv.example ../.sualexenv
 ```
+
+**Importante**: el archivo de ambiente debe estar debajo del directorio público. El código asume que esto es un directorio abajo. En el servidor actual, `html` es un symlink, por lo que no es tan fácil encontrar el archivo. Éste se encuentra en `/var/www/virtual/sualex/html`, simplemente, si se quiere editar, desde el directorio `html` hacer `nano ../.sualexenv`.
 
 **Importante**: Éstas instrucciones asumen que ya existe una base de datos con algunos contenidos existentes. De otro modo, será necesario que al terminar este paso se borre el archivo `LocalSettings.php`. Para dar paso al que el instalador de la wiki inicialice una base de datos.
 
