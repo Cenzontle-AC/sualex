@@ -93,6 +93,24 @@ GRANT ALL PRIVILEGES ON sualex_mediawiki.* TO  'miusuario'@'localhost' ;
 
 **Importante**: Asegurarse que los datos de usuario (e.g. `miusuario`, `mipassword`) así como el nombre de la base de datos (e.g. `sualex_mediawiki`) se correspondan con los usados en el archivo `.env`.
 
+## Extensiones, Skins y submódulos
+A partir del commit `xxxx` se han agregado ciertas extensiones y skins en forma de submódulos de git, idealmente todas las extensiones deberían de actualizarse para usar submódulos, pero de momento la extensiones instaladas por default no encuentran versionadas de manera ordinaria (esto deberá solucionarse eventualmente).
+
+Para actualizar los submódulos en producción se deber ejecutar el siguiente comando:
+
+``` sh
+git submodule update --init --recursive
+git submodule status
+```
+
+Para instalar nuevas extensiones, en el folder `extensions`:
+
+``` sh
+git submodule add https://gerrit.wikimedia.org/r/mediawiki/extensions/MyExtension
+cd MyExtension
+git checkout REL1_43 # donde 1_43 se deriva de la versión actualmente en uso de mediawiki
+```
+
 ## Administración
 
 ### Crear manualmente un backup de la base de datos
@@ -129,6 +147,12 @@ Iniciar un servidor `php` con el siguiente comando:
 
 ```sh
 php -S localhost:9000
+```
+
+Y en otra terminal:
+
+``` sh
+mysql.server start
 ```
 
 Ingresar a http://localhost:9000.
