@@ -1,0 +1,18 @@
+[submodule "extensions/DisplayTitle"]
+	path = extensions/DisplayTitle
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/DisplayTitle
+[submodule "extensions/Popups"]
+	path = extensions/Popups
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/Popups
+[submodule "extensions/CharInsert"]
+	path = extensions/CharInsert
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/CharInsert
+[submodule "extensions/UnusedRedirects"]
+	path = extensions/UnusedRedirects
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/UnusedRedirects
+[submodule "extensions/CodeMirror"]
+	path = extensions/CodeMirror
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/CodeMirror
+[submodule "skins/Foreground"]
+	path = skins/Foreground
+	url = https://gerrit.wikimedia.org/r/mediawiki/skins/Foreground

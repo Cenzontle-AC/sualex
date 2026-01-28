@@ -173,16 +173,34 @@ $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['user']['createaccount'] = true;
 $wgGroupPermissions['*']['edit'] = false;
 
-## Default skin: you can change the default skin. Use the internal symbolic
-## names, e.g. 'vector' or 'monobook':
-$wgDefaultSkin = "vector";
+# Allow titles starting with lowercase
+$wgCapitalLinks = false;
 
-# Enabled skins.
-# The following skins were automatically enabled:
-wfLoadSkin('MinervaNeue');
-wfLoadSkin('MonoBook');
-wfLoadSkin('Timeless');
-wfLoadSkin('Vector');
+# Skins
+# Commenting out other skins as recommended from the Foreground README
+// wfLoadSkin('MinervaNeue');
+// wfLoadSkin('MonoBook');
+// wfLoadSkin('Timeless');
+// wfLoadSkin('Vector');
+wfLoadSkin( 'Foreground' );
+$wgDefaultSkin = 'foreground';
+
+
+
+$wgForegroundFeatures = [
+  'showActionsForAnon' => true,
+  'NavWrapperType' => 'divonly',
+  'showHelpUnderTools' => true,
+  'showRecentChangesUnderTools' => true,
+  'enableTabs' => false,
+  'wikiName' => $wgSitename,
+  'navbarIcon' => true, # show icon
+  'IeEdgeCode' => 1,
+  'showFooterIcons' => false,
+  'addThisPUBID' => '',
+  'useAddThisShare' => '',
+  'useAddThisFollow' => ''
+];
 
 
 # Enabled extensions. Most of the extensions are enabled by adding
@@ -191,11 +209,65 @@ wfLoadSkin('Vector');
 # The following extensions were automatically enabled:
 wfLoadExtension('CategoryTree');
 wfLoadExtension('Cite');
+wfLoadExtension('CiteThisPage');
 wfLoadExtension('Linter');
 wfLoadExtension('MultimediaViewer');
 wfLoadExtension('Poem');
 wfLoadExtension('VisualEditor');
 wfLoadExtension('WikiEditor');
+wfLoadExtension('DisplayTitle');
+wfLoadExtension('ParserFunctions');
+wfLoadExtension('Scribunto');
+$wgScribuntoDefaultEngine = 'luastandalone';
+
+wfLoadExtensions([
+    'TextExtracts',
+    'PageImages',
+    'Popups'
+]);
+$wgPopupsHideOptInOnPreferencesPage = true;
+$wgPopupsReferencePreviewsBetaFeature = false;
+
+wfLoadExtension('CharInsert');
+wfLoadExtension('UnusedRedirects');
+
+wfLoadExtension( 'CodeEditor' );
+$wgDefaultUserOptions['usebetatoolbar'] = 1; // user option provided by WikiEditor extension
+
+wfLoadExtension( 'CodeMirror' );
+$wgDefaultUserOptions[ 'usecodemirror' ] = true;
+
+wfLoadExtension( 'Linter' );
+// Linter suggested configuration
+wfLoadExtension(
+    'Parsoid',
+    "$IP/vendor/wikimedia/parsoid/extension.json"
+);
+
+$wgParsoidSettings = [
+    'useSelser' => true,
+    'linting' => true
+];
+
+$wgVisualEditorParsoidAutoConfig = false; // to make linting work
+
+$wgVirtualRestConfig = [
+  'paths' => [],
+  'modules' => [
+    'parsoid' => [
+      'url' => 'https://www.mysite.wiki/w/rest.php',
+      'domain' => 'www.mysite.wiki',
+      'forwardCookies' => true,
+      'restbaseCompat' => false,
+      'timeout' => 30
+    ],
+  ],
+  'global' => [
+    'timeout' => 360,
+    'forwardCookies' => false,
+    'HTTPProxy' => null
+  ]
+];
 
 # Additional extensions
 
