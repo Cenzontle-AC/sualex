@@ -47,9 +47,9 @@ cp .sualexenv.example ../.sualexenv
 
 **Importante**: Éstas instrucciones asumen que ya existe una base de datos con algunos contenidos existentes. De otro modo, será necesario que al terminar este paso se borre el archivo `LocalSettings.php`. Para dar paso al que el instalador de la wiki inicialice una base de datos.
 
-### Configurar el ambiente (.env)
+### Configurar el ambiente (.sualexenv)
 
-Una vez creado el archivo `.env` es necesario ingresar los valores requeridos, tales como la URL base del sitio, y los datos de conexión con la base de datos.
+Una vez creado el archivo `.sualexenv` es necesario ingresar los valores requeridos, tales como la URL base del sitio, y los datos de conexión con la base de datos.
 
 ### Configurar la base de datos
 
@@ -91,7 +91,7 @@ CREATE USER 'miusuario'@'localhost' IDENTIFIED BY 'mipassword';
 GRANT ALL PRIVILEGES ON sualex_mediawiki.* TO  'miusuario'@'localhost' ;
 ```
 
-**Importante**: Asegurarse que los datos de usuario (e.g. `miusuario`, `mipassword`) así como el nombre de la base de datos (e.g. `sualex_mediawiki`) se correspondan con los usados en el archivo `.env`.
+**Importante**: Asegurarse que los datos de usuario (e.g. `miusuario`, `mipassword`) así como el nombre de la base de datos (e.g. `sualex_mediawiki`) se correspondan con los usados en el archivo `.sualexenv`.
 
 ## Extensiones, Skins y submódulos
 A partir del commit `xxxx` se han agregado ciertas extensiones y skins en forma de submódulos de git, idealmente todas las extensiones deberían de actualizarse para usar submódulos, pero de momento la extensiones instaladas por default no encuentran versionadas de manera ordinaria (esto deberá solucionarse eventualmente).
@@ -137,7 +137,7 @@ tar -xJf images_<date>.tar.xz -C /path/to/destination
 
 ### En producción
 
-Una vez realizado esto, así como habiendo configurado el archivo `.env` se puede proceder a abrir cargar la página en la URL definida en en archivo `.env` en el campo `wgServer`.
+Una vez realizado esto, así como habiendo configurado el archivo `.sualexenv` se puede proceder a abrir cargar la página en la URL definida en en archivo `.sualexenv` en el campo `wgServer`.
 
 Es necesario que el DNS del dominio apunte al servidor que hostea la
 
