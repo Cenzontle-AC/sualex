@@ -127,7 +127,7 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 $wgSharedTables[] = "actor";
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_ACCEL;
+$wgMainCacheType = 'redis';
 $wgMemCachedServers = [];
 
 ## Redis Cache
@@ -139,6 +139,13 @@ if($redisServer) {
       // 'persistent'        => false,
       // 'password'          => 'secret',
       // 'automaticFailOver' => true,
+  ];
+
+  $wgJobTypeConf['default'] = [
+    'class'          => 'JobQueueRedis',
+    'redisServer'    => $redisServer,
+    'redisConfig'    => [],
+    'daemonized'     => true
   ];
 }
 
