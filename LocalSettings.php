@@ -145,7 +145,8 @@ if($redisServer) {
     'class'          => 'JobQueueRedis',
     'redisServer'    => $redisServer,
     'redisConfig'    => [],
-    'daemonized'     => true
+    'daemonized'     => true,
+    'queue' => 'basic' 
   ];
 }
 
