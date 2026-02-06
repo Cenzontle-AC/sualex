@@ -18,7 +18,8 @@ smptPassword="smpt-password"
 ## Emails
 emergencyContactEmail="user@example.com"
 passwordSenderEmail="user@example.com"
-
+## Cache
+# redisServer="" # optional
 
 # optional
 wgShowExceptionDetails="false"

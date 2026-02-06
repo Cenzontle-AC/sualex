@@ -55,6 +55,7 @@ $smptShouldAuth_ = getenv('smptShouldAuth');
 $smptShouldAuth = $smptShouldAuth_ === 'true'; # not included in env test below, but $smptShouldAuth_ is.
 $smptUsername = getenv('smptUsername');
 $smptPassword = getenv('smptPassword');
+$redisServer = getenv('redisServer');
 ### Emails
 $emergencyContactEmail = getenv('emergencyContactEmail');
 $passwordSenderEmail = getenv('passwordSenderEmail');
@@ -128,6 +129,18 @@ $wgSharedTables[] = "actor";
 ## Shared memory settings
 $wgMainCacheType = CACHE_ACCEL;
 $wgMemCachedServers = [];
+
+## Redis Cache
+if($redisServer) {
+  $wgObjectCaches['redis'] = [
+      'class'                => 'RedisBagOStuff',
+      'servers'              => [ $redisServer ],
+      // 'connectTimeout'    => 1,
+      // 'persistent'        => false,
+      // 'password'          => 'secret',
+      // 'automaticFailOver' => true,
+  ];
+}
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:

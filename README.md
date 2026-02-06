@@ -111,6 +111,11 @@ cd MyExtension
 git checkout REL1_43 # donde 1_43 se deriva de la versión actualmente en uso de mediawiki
 ```
 
+## Cache
+El archivo `LocalSettings.php` ha sido configurado para funcionar opcionalmente con `Redis`. Para la configuración del servidor es necesario seguir la siguiente documentación: https://www.mediawiki.org/wiki/Redis. Se recomienda también instalar `Redis` según la documentación del proveedor del servidor. 
+
+Para activar la conexión a `Redis` se requiere usar la variable de ambiente `redisServer` que debe apuntar a una ip o un socket.
+
 ## Administración
 
 ### Crear manualmente un backup de la base de datos
